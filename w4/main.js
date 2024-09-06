@@ -11,6 +11,7 @@ function determineHouseSizePts(size) {
     } else if (size === "apt") {
        houseSizePoints  = 2;
   }
+  return houseSizePoints;
 
 }
 function determineHouseHoldPts(numberInHousehold) {
@@ -30,6 +31,7 @@ function determineHouseHoldPts(numberInHousehold) {
   } else if (numberInHousehold > 6) {
     houseHoldPoints = 2;
   }
+  return houseHoldPoints;
 }
 
 function start(houseHoldMembers, houseSize) {
@@ -40,19 +42,27 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
-  
+  for (arr of cfpData) {
+    console.log(arr);
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `Carbon footprint total is ${arr[4]}, household number is ${[5]}, 
+    score for house member is ${[2]}, size of house is ${[1]}, score for size of house is ${[2]}.`;
+   
+    output.appendChild(newP);
+  }
 }
 
 start(5, "large");
 start(4, "medium");
 start(3, "small");
 start(2, "apt");
-start(7, 1)
-start(6, 2)
-start(5, 3)
-start(4, 4)
-start(3, 5)
-start(2, 6)
-start(1, 7)
+start(7, "large");
+start(6, "medium");
+start(5, "small");
+start(4, "apt");
+start(3, "large");
+start(2, "medium");
+start(1, "small");
 
-displayOutput()
+displayOutput();
