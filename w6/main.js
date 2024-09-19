@@ -36,7 +36,7 @@ function determineHouseHoldPts(numberInHousehold) {
   return houseHoldPoints;
 }
 
-function start(houseHoldMembers, houseSize) {
+function start( firstName, lastName, houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
@@ -46,6 +46,8 @@ function start(houseHoldMembers, houseSize) {
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
+    firstName: firstName,
+    lastName: lastName,
   });
 }
 
@@ -59,14 +61,23 @@ function displayOutput() {
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`; //${obj.houseHPTS},`;  //(score: ${arr[3]}),`;
     newP.textContent += ` and a ${obj.houseS} size of home (score:${obj.houseSPTS}).`;
     const newH4 = document.createElement("p");
-    newH4.textContent = `House Size ${obj.houseS}`;
+    newH4.textContent = `House Size: ${obj.houseS}`;
     const newH5 = document.createElement("h5");
-    newH5.textContent = `House Members ${obj.houseM}`;
+    newH5.textContent = `House Members: ${obj.houseM}`;
+    const newH1 = document.createElement("h1");
+    newH1.textContent = `First Name: ${obj.firstName}`;
+    newH1.textContent += ` 
+     Last Name: ${obj.lastName}`;
+    // const newH = document.createElement("h2");
+    // newH6.textContent = `Last Name: ${obj.lastName}`;
     OUTPUT.appendChild(newH2);
     OUTPUT.appendChild(newH3);
     OUTPUT.appendChild(newP);
     OUTPUT.appendChild(newH4);
     OUTPUT.appendChild(newH5);
+    // OUTPUT.appendChild(newH6);
+    OUTPUT.appendChild(newH1);
+    
   }
 }
 
@@ -76,34 +87,9 @@ FORM.addEventListener(`submit`, function (e) {
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housemembers.value);
   const houseSize = FORM.housesize.value;
-  start(houseMembers, houseSize);
+  start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   displayOutput();
   FORM.reset();
 });
 
-// Is the apartment score correct? IF not why not?
-// It is not correct because it gives input 0 but because of apt needing to be apartment
-// For the other question, it is because it makes things easier
-
-
-// function displayOutObj(obj) {
-//   console.log(obj);
-//   const output = document.getElementById("output");
-//   const newH2 = document.createElement("h2");
-//   newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
-//   output.appendChild(newH2);
-//   const houseMInfo = document.createElement("p");
-//   houseMInfo.textContent = `Household Members: ${obj.houseM}`;
-//   output.appendChild(houseMInfo);
-//   const houseSInfo = document.createElement("p");
-//   houseSInfo.textContent = `House size: ${obj.houseS}`;
-//   output.appendChild(houseSInfo);
-//   const houseHPTSInfo = document.createElement("p");
-//   houseHPTSInfo.textContent = `Household points: ${obj.houseHPTS}`;
-//   output.appendChild(houseHPTSInfo);
-//   const houseSPTSInfo = document.createElement("p");
-//   houseSPTSInfo.textContent = `House Size Points: ${obj.houseSPTS}`;
-//   output.appendChild(houseMInfo);
-
-// }
