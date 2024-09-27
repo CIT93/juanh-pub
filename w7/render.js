@@ -8,7 +8,8 @@ function renderTblHeading() {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
-  const headingTextArr = ["Name","HouseHold","HouseSize","Footprint","actions",];
+  //const headingTextArr = ["Name","HouseHold","HouseSize","Footprint","actions",];
+  const headingTextArr = ["Name",,"Footprint",];
   headingTextArr.forEach(function (text) {
     const th = document.createElement("th");
     th.textContent = text;
