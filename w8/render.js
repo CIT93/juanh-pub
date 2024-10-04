@@ -24,7 +24,12 @@ function renderTblBtn(index, data) {
   btnDel.textContent = "Del";
   td.appendChild(btnEdit);
   td.appendChild(btnDel);
-  btnDel.addEventListener(`click`, function(e) {
+  btnDel.addEventListener(`click`, function (e) {
+    if (btnDel.value.trim() !== ``) {
+      deleteButton.disabled = false;
+    } else {
+      deleteButton.disabled = true;
+   }
     console.log(`inside the delete button`);
     console.log(e);
     data.splice(index, 1);
