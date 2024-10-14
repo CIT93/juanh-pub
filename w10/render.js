@@ -2,7 +2,7 @@ import {FORM, TBL} from "./global.js"
 import { saveLS } from "./storage.js";
 
 
-function renderTblHeading() {
+const renderTblHeading = function() {
   // TBL.innerHTML = "";
   const table = document.createElement("table");
   const thead = document.createElement("thead");
@@ -18,13 +18,13 @@ function renderTblHeading() {
   return table;
 }
 
-function onUpdate(index, data) {
+const onUpdate = function(index, data) {
     data.splice(index, 1);
     saveLS(data);
     renderTbl(data);  
 }
 
-function renderTblBtn(obj, index, data) {
+ const renderTblBtn = function(obj, index, data) {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button");
@@ -46,7 +46,7 @@ function renderTblBtn(obj, index, data) {
   return td;
 }
 
-function renderTblBody(data) {
+const renderTblBody = function(data) {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
     console.log(index);
@@ -57,27 +57,22 @@ function renderTblBody(data) {
         td.textContent = value;
         tr.appendChild(td);
       }
-      }
+    }
     const td = renderTblBtn(obj, index, data);
     tr.appendChild(td);
     tbody.appendChild(tr);
   });
   return tbody;
-}
+};
 
-function renderTbl(data) {
+const renderTbl = function(data) {
   TBL.innerHTML = "";
   if (data.length !== 0) {
-  const table = renderTblHeading();
-  const tbody = renderTblBody(data);
-  table.appendChild(tbody);
-  TBL.appendChild(table);
+    const table = renderTblHeading();
+    const tbody = renderTblBody(data);
+    table.appendChild(tbody);
+    TBL.appendChild(table);
   }
-}
+};
 
 export { renderTbl };
-
-// I am not sure where to start but was reading and it seems like something I do not know where to start
-// I accidently commit to private but will do public "my code before reviewing solution"
-//
-// 

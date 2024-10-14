@@ -1,0 +1,1 @@
+I think it helped me understand function a little more because even though people know or understand the code it is nice to see how someones else is interpreting the code to better understand or it just helps to know other interpretations.
