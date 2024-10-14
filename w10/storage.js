@@ -1,5 +1,3 @@
-//const cfpData = getLS ();
-
 const saveLS = cfpData => {
     const serialisedArr = JSON.stringify(cfpData);
     localStorage.setItem("cfp", serialisedArr);
@@ -13,5 +11,5 @@ const getLS = () => {
         return [];
     }
 }
-
-export { saveLS, getLS };//cfpData
+const cfpData = getLS ();
+export { cfpData, saveLS, getLS };//cfpData
