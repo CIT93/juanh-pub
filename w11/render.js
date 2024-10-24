@@ -53,7 +53,7 @@ const renderTblBody = data => {
     console.log(index);
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
-      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints") { //key !== "foodChoicePoints"
+      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints" && key !== "foodChoicePoints") { 
         const td = document.createElement("td");
         td.textContent = value;
         tr.appendChild(td);
