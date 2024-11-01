@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>w12 pub</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="form">
+      <fieldset> 
+        <legend>Time to get fit</legend>
+        <div>
+          <label for="">Type of Exercise</label>
+          
+          <select name="housesize" required name="type">
+            <option value="">---Please enter type of Exercise---</option>
+            <option value="apartment">pull ups</option>
+            <option value="small">curls</option>
+            <option value="medium">test</option>
+            <option value="large">cycling</option>
+          </select>
+        </div>      
+        <legend></legend> 
+        <div>
+            <label for="">Target number of reps</label>
+             <input type="number" name="reps" max="20" required/>  
+        </div>
+        <div>
+            <label for="">Time in seconds</label>
+           <input type="number" name="stopE" max="20" step="any" required/> 
+        </div>
+
+      <button type="submit">submit</button>
+    </fieldset>
+       </form>
+       <section class="center" id="output">
+        <label for="">Submit to start timer</label>
+       </section>
+  </body>
+</html>
