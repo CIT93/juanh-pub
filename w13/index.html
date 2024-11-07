@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async workout</title>
+    <script type="module"src="main.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form id="form">
+        <fieldset>
+
+            <legend>Time to get fit</legend>
+            <div>
+                <label for="">Type of excercise</label>
+                <select name="exercise" id="typeOfExercise" required>
+                  <option value="">---Please enter type of Exercise---</option>
+                  <option value="pull ups">pull-ups</option>
+                  <option value="curls">Curls</option>
+                  <option value="test">Test</option>
+                  <option value="cycling">Cycling</option>
+                </select>
+              </div>
+        
+              <div>
+                <label for="">Target number of reps:</label>
+                <input type="number" name="reps" id="reps" min="1" max="7" required />
+              </div>
+        
+              <div>
+                <label for="">Time in Seconds:</label>
+                <input type="number" name="time" id="time" min="" max="20" value="10" required />
+              </div>
+        
+            <button type="submit" button id="set-timmer">Submit</button>
+            <section class="center" id="output">
+            <label for="">Submit to start timer</label>
+            </section>
+            </fieldset>
+        
+            </form>
+            <div id="output"></div>
+            <h2 id="message">Ready</h2>
+</body>
+</html>
