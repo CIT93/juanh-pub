@@ -1,10 +1,27 @@
 import {FORM, TBL} from "./global.js"
 import { saveLS } from "./storage.js";
 
+const calculateAvg = (data) => {
+  const reduceTotal = data.reduce((sum, ea) => sum + ea.total, 0);
+  const tableRef = document.getElementById("table-id");
+  let newRow = tableRef.insertRow(-1);
+  let newCell = newRow.insertCell(0);
+  let newCell_1 = newRow.insertCell(0);
+  let newCell_2 = newRow.insertCell(0);
+  let newCell_3 = newRow.insertCell(0);
+  let newCell_4 = newRow.insertCell(0);
+  let newLabl = document.createTextNode(`Average Footprint`);
+  let newText = document.createTextNode(
+    `${Math.floor(reduceTotal / data.length)}`
+  );
+  newCell_1.appendChild(newLabl);
+  newCell.appendChild(newText);
+};
 
 const renderTblHeading = () => {
   // TBL.innerHTML = "";
   const table = document.createElement("table");
+  table.setAttribute("id", "table-id");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = ["Name", "HouseHold", "HouseSize", "FoodChoice", "Footprint", "actions"];
@@ -72,6 +89,7 @@ const renderTbl = data => {
     const tbody = renderTblBody(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
+    calculateAvg(data);
   }
 };
 
