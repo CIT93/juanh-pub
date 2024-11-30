@@ -1,0 +1,1 @@
+I think I would just do if else statements to make it working starting with if they have one then calculations if not then none
