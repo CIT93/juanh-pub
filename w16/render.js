@@ -51,13 +51,13 @@ const onUpdate = (index, data) => {
   onUpdate(index, data);
   });
   btnEdit.addEventListener(`click`, e => {
-    FORM[0].value = obj.first;
-    FORM[1].value = obj.last;
-    FORM[2].value = obj.houseMembers;
-    FORM[3].value = obj.houseSize;
-    FORM[4].value = obj.foodChoice;
-    FORM[5].value = obj.foodSource;
-    FORM[6].value = obj.waterConsumPoints.toString();
+    FORM[1].value = obj.first;
+    FORM[2].value = obj.last;
+    FORM[3].value = obj.houseMembers;
+    FORM[4].value = obj.houseSize;
+    FORM[5].value = obj.foodChoice;
+    FORM[6].value = obj.foodSource;
+    FORM[7].value = obj.waterConsumPoints.toString();
     onUpdate(index, data);
 
   })
