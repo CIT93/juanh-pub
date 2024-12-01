@@ -68,6 +68,17 @@
           <label for="">Do you have both a dishwasher and a washing machine</label>
           <input type="checkbox" name="hasBoth" id="hasBoth">
         </div>
+          <div>
+          <label for="">how many household purchases you make each year.</label>
+          <select name="householdPurchases" id="householdPurchases" required>
+            <option value="">---How many items purchased---</option>
+            <option value="3">More than 7</option>
+            <option value="2">Between 5 to 7</option>
+            <option value="1">Between 3 to 5</option>
+            <option value="0">less than 3</option>
+            <option value="0">Almost nothing or only second hand items</option>
+          </select>
+        </div>
         <button type="submit">submit</button><br>
         <span id ="submitError" class="error"></span>
       </fieldset>

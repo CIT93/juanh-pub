@@ -30,6 +30,8 @@ FORM.addEventListener(`submit`, e => {
   e.preventDefault();
   if (FNAME.value !== "" && LNAME.value !== "") {
     SUBMIT.textContent = "";
+        const hasBoth = e.target.hasBoth.checked;
+        const householdPurchases = parseInt(e.target.householdPurchases.value);
     const fpObj = new FP(
       FNAME.value,
       LNAME.value,

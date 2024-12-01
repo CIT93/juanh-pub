@@ -7,12 +7,39 @@ class FP {
     this.foodChoice = foodChoice;
     this.foodSource = foodSource;
     this.waterConsumPoints = waterConsum;
+    this.both = this.calculateAppliancePoints(hasBoth);
+    this.householdPurchasesPoints = this.householdPurchasesPoints(householdPurchases);
     this.calHouseHoldPoints();
     this.calHouseSizePoints();
     this.calFoodChoicePoints();
     this.calFoodSourcePoints();
     this.calTotal();
   }
+  calculateAppliancePoints(hasBoth){
+    let both = 0;
+    if(hasBoth) {
+      both = 2;
+    }
+    return both;
+  }
+
+
+  calculateHouseholdPurchasesPoints(purchases) {
+    let purchasePoints = 0;
+    if (purchases >= 10) {
+      purchasePoints = 10; 
+    } else if (purchases >= 8) {
+      purchasePoints = 8; 
+    } else if (purchases >= 6) {
+      purchasePoints = 6; 
+    } else if (purchases >= 4) {
+      purchasePoints = 4; 
+    } else if (purchases >= 2) {
+      purchasePoints = 2; 
+    }
+    return purchasePoints;
+  }
+
   calHouseHoldPoints() {
     if (this.houseMembers === 1) {
       this.houseHoldPoints = 14;
@@ -69,7 +96,9 @@ class FP {
       this.houseSizePoints +
       this.foodChoicePoints +
       this.foodSourcePoints +
-      this.waterConsumPoints;
+      this.waterConsumPoints +
+      this.both +
+      this.householdPurchasesPoints;
   }
 }
 export {FP}
