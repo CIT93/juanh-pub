@@ -57,7 +57,10 @@ const onUpdate = (index, data) => {
     FORM[4].value = obj.houseSize;
     FORM[5].value = obj.foodChoice;
     FORM[6].value = obj.foodSource;
-    FORM[7].value = obj.waterConsumPoints.toString();
+    FORM[7].value = obj.waterConsumPoints;
+    FORM.water.value = obj.waterValue;
+    FORM.dish_washer.checked = obj.both;
+    FORM.purchases.value  = obj.purchasesPoints;
     onUpdate(index, data);
 
   })
