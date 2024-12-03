@@ -35,14 +35,17 @@ FORM.addEventListener(`submit`, e => {
     const fpObj = new FP(
       FNAME.value,
       LNAME.value,
+      hasBoth.value,
+      householdPurchases.value,
       parseInt(e.target.housemembers.value),
       e.target.housesize.value,
       e.target.foodchoice.value,
       e.target.foodSource.value,
-      e.target.water.value,
+      e.target.water.value,      e.target.householdPurchases.value,
       e.target.dish_washer.checked ? parseInt(e.target.water.value) * 2 : parseInt(e.target.water.value),
       e.target.dish_washer.checked,
-      parseInt(e.target.purhases.value)
+      parseInt(e.target.householdPurchases.value)
+
     );
     cfpData.push(fpObj)
     saveLS(cfpData);
@@ -58,5 +61,7 @@ FORM.addEventListener(`submit`, e => {
 WATER.addEventListener("change", e => {
   if (parseInt(WATER.value) === 0) {
     BOTH.disabled = true;
+  } else {
+    BOTH.disabled = false;
   }
 })
